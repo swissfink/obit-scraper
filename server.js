@@ -11,7 +11,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
@@ -31,9 +31,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/populater", { useNewUrlParser: true 
 
 // Routes
 
-app.get("/", function(req, res) {
-  res.json(path.join(__dirname, "public/index.html"));
-});
+// app.get("/", function(req, res) {
+//   res.json(path.join(__dirname, "public/index.html"));
+// });
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
