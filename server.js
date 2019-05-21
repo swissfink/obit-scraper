@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://127.0.0.1:27017/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://127.0.0.1:27017/populater", { useNewUrlParser: true });
 
 // Routes
 
