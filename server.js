@@ -16,6 +16,8 @@ var PORT = process.env.PORT || 3000;
 // Initialize Express
 var app = express();
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/mongoHeadlines";
+
 // Configure middleware
 
 // Use morgan logger for logging requests
@@ -27,7 +29,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://127.0.0.1:27017/populater", { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect("mongodb://127.0.0.1:27017/mongoHeadlines", { useNewUrlParser: true });
 
 // Routes
 
