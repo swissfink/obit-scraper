@@ -28,7 +28,7 @@ var app = express();
 
 // Connect mongodb to heroku
 
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/mongoHeadlines";
 
 // Configure middleware
 
@@ -41,8 +41,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-// mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
-mongoose.connect("mongodb://127.0.0.1:27017/mongoHeadlines", { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+// mongoose.connect("mongodb://127.0.0.1:27017/mongoHeadlines", { useNewUrlParser: true });
 
 // Routes
 
