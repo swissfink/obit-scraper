@@ -1,1 +1,1 @@
-# news-scraper
+# obit-scraper
