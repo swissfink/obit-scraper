@@ -28,24 +28,26 @@ var app = express();
 
 // Connect mongodb to heroku
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/mongoObits";
 
 // Configure middleware
-
 // Use morgan logger for logging requests
 app.use(logger("dev"));
+
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Make public a static folder
 app.use(express.static("public"));
+
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 // mongoose.connect("mongodb://127.0.0.1:27017/mongoHeadlines", { useNewUrlParser: true });
 
-// Routes
 
+// Routes
 // app.get("/", function(req, res) {
 //   res.json(path.join(__dirname, "public/index.html"));
 // });
@@ -63,15 +65,19 @@ app.get("/scrape", function(req, res) {
       var result = {};
 
       // Add the text and href of every link, and save them as properties of the result object
+      result.time = $(this)
+        .children("time")
+        .text();
       result.title = $(this)
         .children("a")
         .text();
       result.link = $(this)
         .children("a")
         .attr("href");
-      result.image = $(this)
-        .children("a")
-        .attr("img");
+      
+      // result.img = $(this)
+      //   .children("img")
+      //   .attr("href");
 
       // Create a new Obit using the `result` object built from scraping
       db.Obit.create(result)
