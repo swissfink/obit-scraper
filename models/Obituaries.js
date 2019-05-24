@@ -7,11 +7,12 @@ var Schema = mongoose.Schema;
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 var ObitSchema = new Schema({
-  // `title` is required and of type String
+  // `time` is required and of type String
   time: {
     type: String,
     required: true
   },
+  // `title` is required and of type String
   title: {
     type: String,
     required: true
@@ -22,8 +23,7 @@ var ObitSchema = new Schema({
     required: true
   },
   // `image` is required and of type String
-  // img: {
-  //   data: Buffer,
+  // image: {
   //   type: String,
   //   required: true
   // },

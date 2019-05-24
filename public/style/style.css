@@ -33,8 +33,16 @@ h1 {
 }
 
 #title-text {
-    text-shadow: 2px 2px #696969;
+  text-shadow: 2px 2px #696969;
+}
 
+#savenote {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+#savenote:hover {
+  background-color: #c6baa5;
 }
 
 .container {
@@ -96,4 +104,32 @@ textarea {
     height: 60px;
     line-height: 60px;
     color: #fff;
+}
+
+@media only screen and (max-width : 600px) {
+
+  #notes {
+    position: fixed;
+    width: 100%;
+    /* line-height: 60px; */
+    z-index: 1;
+    height: 220px;
+    margin-top: 70px;
+    top: 0;
+    right: 0;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 0;
+  }
+
+  .container {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* padding-top: 5%; */
+  }
+
 }

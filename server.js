@@ -59,7 +59,7 @@ app.get("/scrape", function(req, res) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 
-    // Now, we grab every h2 within an Obit tag, and do the following:
+    // Now, we grab every article within an Obit tag, and do the following:
     $("article").each(function(i, element) {
       // Save an empty result object
       var result = {};
@@ -74,10 +74,9 @@ app.get("/scrape", function(req, res) {
       result.link = $(this)
         .children("a")
         .attr("href");
-      
-      // result.img = $(this)
+      // result.image = $(this)
       //   .children("img")
-      //   .attr("href");
+      //   .attr("src");
 
       // Create a new Obit using the `result` object built from scraping
       db.Obit.create(result)
@@ -92,8 +91,11 @@ app.get("/scrape", function(req, res) {
     });
 
     // Send a message to the client
-    res.send("Scrape Complete");
+    res.send("Scrape Complete <br><br><a href='/'>Return to Home Page</a>");
+
   });
+
+  
 });
 
 // Route for getting all Obits from the db
