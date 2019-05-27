@@ -1,12 +1,12 @@
-# obit-scraper
+# Obituary Scraper
 
-A burger logger using Node, Mongoose, Express, Cheerio, Axios, and Heroku.
+A "article" scraper app that uses Node, Mongoose, Express, Cheerio, Axios, and Heroku.
 
 ![Image of Obit Scraper Landing Page](https://github.com/swissfink/obit-scraper/blob/master/public/images/obit-scraper-featured-image.png)
 
 ## How it works
 
-* This Obituary Scraper is an app that lets users scrape all the recent obituaries posted in the [Altoona Mirror Obituaries](http://www.altoonamirror.com/obituaries/) section of their website.
+* This Obituary Scraper is an app that lets users scrape all the recent obituaries posted in the [Altoona Mirror's](http://www.altoonamirror.com/obituaries/) obituary section of their website.
 
 * When a user clicks on a person's name, they can add notes about that obtiuary. 
 
