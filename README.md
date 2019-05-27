@@ -1,6 +1,6 @@
 # Obituary Scraper
 
-A "article" scraper app that uses Node, Mongoose, Express, Cheerio, Axios, and Heroku.
+An "article" scraper app that uses Node, Mongoose, Express, Cheerio, Axios, and Heroku.
 
 ![Image of Obit Scraper Landing Page](https://github.com/swissfink/obit-scraper/blob/master/public/images/obit-scraper-featured-image.png)
 
